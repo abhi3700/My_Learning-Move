@@ -1,0 +1,15 @@
+# Move Build Output
+build/
+
+# Move coverage and tracing information
+.trace
+*.mvcov
+
+# macOS
+.DS_Store
+
+# keypair
+keypair*
+
+# aptos config
+.aptos/
