@@ -19,3 +19,6 @@ keypair*
 
 # sui key
 *.key
+
+# sui log
+sui.log.*
