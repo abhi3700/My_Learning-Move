@@ -1,0 +1,29 @@
+2023-06-30T13:17:39.821584Z  INFO sui::client_commands: 0x8833b9cff8032ddf6eb52dd5fe82d9708f53f0d2a89d7ba5e94ba01fcca3c7dc
+2023-06-30T13:17:52.629481Z  INFO sui::client_commands: devnet => https://fullnode.devnet.sui.io:443 (active)
+2023-06-30T13:18:07.301533Z  INFO sui::client_commands: devnet => https://fullnode.devnet.sui.io:443 (active)
+2023-06-30T13:19:44.337889Z  INFO sui::client_commands: c42d763f
+2023-06-30T13:20:13.972281Z  INFO sui::client_commands: Showing 1 results.
+2023-06-30T13:20:13.972306Z  INFO sui::client_commands: 0x8833b9cff8032ddf6eb52dd5fe82d9708f53f0d2a89d7ba5e94ba01fcca3c7dc <=
+2023-06-30T13:20:45.968316Z  INFO sui::client_commands: devnet
+2023-06-30T13:20:50.504157Z  INFO sui::client_commands: 0x8833b9cff8032ddf6eb52dd5fe82d9708f53f0d2a89d7ba5e94ba01fcca3c7dc
+2023-06-30T13:21:38.885952Z  INFO sui::client_commands: 0x8833b9cff8032ddf6eb52dd5fe82d9708f53f0d2a89d7ba5e94ba01fcca3c7dc
+2023-06-30T13:21:41.848083Z  INFO sui::client_commands: Showing 2 results.
+2023-06-30T13:21:41.848111Z  INFO sui::client_commands: 0x8833b9cff8032ddf6eb52dd5fe82d9708f53f0d2a89d7ba5e94ba01fcca3c7dc <=
+2023-06-30T13:21:41.848113Z  INFO sui::client_commands: 0xdd72cf212af07beb9ebc132e01f6398858c623aae8e7a9e7e6f9c09d279c65ab
+2023-06-30T13:26:23.553781Z  INFO sui::client_commands: Showing 2 results.
+2023-06-30T13:26:23.555252Z  INFO sui::client_commands: 0x8833b9cff8032ddf6eb52dd5fe82d9708f53f0d2a89d7ba5e94ba01fcca3c7dc <=
+2023-06-30T13:26:23.555255Z  INFO sui::client_commands: 0xdd72cf212af07beb9ebc132e01f6398858c623aae8e7a9e7e6f9c09d279c65ab
+2023-06-30T13:27:56.102488Z  INFO sui::client_commands: devnet => https://fullnode.devnet.sui.io:443 (active)
+2023-06-30T13:28:05.778094Z  INFO sui::client_commands: 0x8833b9cff8032ddf6eb52dd5fe82d9708f53f0d2a89d7ba5e94ba01fcca3c7dc
+2023-06-30T13:29:33.089779Z  INFO sui::client_commands: 0x8833b9cff8032ddf6eb52dd5fe82d9708f53f0d2a89d7ba5e94ba01fcca3c7dc
+2023-06-30T13:29:37.892242Z  INFO sui::client_commands: devnet
+2023-06-30T13:30:03.500592Z  INFO sui::client_commands: c42d763f
+2023-06-30T13:32:11.081661Z  INFO sui::client_commands: Showing 3 results.
+2023-06-30T13:32:11.082061Z  INFO sui::client_commands: 0x7e86320466e04f808a5e046a65d1458b3a28def339ea9986e5874496ef66bd08
+2023-06-30T13:32:11.082063Z  INFO sui::client_commands: 0x8833b9cff8032ddf6eb52dd5fe82d9708f53f0d2a89d7ba5e94ba01fcca3c7dc <=
+2023-06-30T13:32:11.082064Z  INFO sui::client_commands: 0xdd72cf212af07beb9ebc132e01f6398858c623aae8e7a9e7e6f9c09d279c65ab
+2023-06-30T14:08:45.619886Z  INFO sui::client_commands: 0x8833b9cff8032ddf6eb52dd5fe82d9708f53f0d2a89d7ba5e94ba01fcca3c7dc
+2023-06-30T14:10:03.481046Z  INFO sui::client_commands: Showing 3 results.
+2023-06-30T14:10:03.481082Z  INFO sui::client_commands: 0x7e86320466e04f808a5e046a65d1458b3a28def339ea9986e5874496ef66bd08
+2023-06-30T14:10:03.481084Z  INFO sui::client_commands: 0x8833b9cff8032ddf6eb52dd5fe82d9708f53f0d2a89d7ba5e94ba01fcca3c7dc <=
+2023-06-30T14:10:03.481085Z  INFO sui::client_commands: 0xdd72cf212af07beb9ebc132e01f6398858c623aae8e7a9e7e6f9c09d279c65ab

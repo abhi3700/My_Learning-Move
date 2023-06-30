@@ -13,3 +13,9 @@ keypair*
 
 # aptos config
 .aptos/
+
+# draw.io
+*.drawio.bkp*
+
+# sui key
+*.key
