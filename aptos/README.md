@@ -389,13 +389,8 @@ basic_coin_addr = "0xCAFE"
 
 ## Resources
 
-- [History of Move lang](<https://en.wikipedia.org/wiki/Diem_(digital_currency)>)
 - [Rust coding guidelines for Aptos Node implementation](https://aptos.dev/community/rust-coding-guidelines)
 - [Move language by Aptos](https://aptos.dev/move/book/SUMMARY)
 - [Aptos Developer Documentation](https://aptos.dev/)
 - [Aptos Onboarding Tutorials](https://aptos.dev/tutorials/)
-- [Move book by Core team](https://move-language.github.io/move/)
-- [Move book by @damirka](https://move-book.com/)
   > for beginners
-- [Move Design patterns](https://www.move-patterns.com/)
-- [Awesome-move](https://github.com/MystenLabs/awesome-move)

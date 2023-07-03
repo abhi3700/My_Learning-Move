@@ -22,3 +22,6 @@ keypair*
 
 # sui log
 sui.log.*
+
+# lock files
+*.lock

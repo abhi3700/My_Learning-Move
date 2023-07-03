@@ -43,6 +43,9 @@ More on this [here](https://docs.sui.io/learn/cryptography/sui-wallet-specs#).
 
 - Interactive console via `$ sui console`. By default it is connected to `devnet` & `ed25519` wallet scheme. 1 address is created by default.
 
+    <details>
+    <summary>Console:</summary>
+
   ```sh
   ❯ sui console
   _____       _    ______                       __
@@ -82,25 +85,27 @@ More on this [here](https://docs.sui.io/learn/cryptography/sui-wallet-specs#).
   c42d763f
   sui>-$ exit
   Bye!
+
   ```
 
+    </details>
   The keystore file is created in the home directory by default. Press <kbd>tab</kbd> to go to the next sorted command (alphabetically ordered) & <kbd>shift+tab</kbd> to go back to the previous sorted command.
 
-  New address can be generated inside this keystore via `new-address` command.
+New address can be generated inside this keystore via `new-address` command.
 
 - Non-interactive console via `$ sui client <command>`. The environment can be accessed from outside REPL type shell as shown above.
 - Get faucet in devnet
 
-  ```sh
-  ❯ curl --location --request POST 'https://faucet.devnet.sui.io/gas' \
-  --header 'Content-Type: application/json' \
-  --data-raw '{
-      "FixedAmountRequest": {
-          "recipient": "0x7e86320466e04f808a5e046a65d1458b3a28def339ea9986e5874496ef66bd08"
-      }
-  }'
-  {"transferredGasObjects":[{"amount":10000000000,"id":"0xfd0d7fa2823b4874a9f4e269bb99fed66819dd66feebd09d710aaf49ace085c2","transferTxDigest":"ejRpvHknJUzb6pP4hVurrwcRDRLNv78egPai4BMQ5ev"}],"error":null}%
-  ```
+```sh
+❯ curl --location --request POST 'https://faucet.devnet.sui.io/gas' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "FixedAmountRequest": {
+        "recipient": "0x7e86320466e04f808a5e046a65d1458b3a28def339ea9986e5874496ef66bd08"
+    }
+}'
+{"transferredGasObjects":[{"amount":10000000000,"id":"0xfd0d7fa2823b4874a9f4e269bb99fed66819dd66feebd09d710aaf49ace085c2","transferTxDigest":"ejRpvHknJUzb6pP4hVurrwcRDRLNv78egPai4BMQ5ev"}],"error":null}%
+```
 
 - switch to an address (in keystore):
 
@@ -271,5 +276,85 @@ Object ID | Version | Digest | Owner Type | Object Type
 0x67e786d94eac270580eca1a5364b55efa59586ba6776e560bbae078ef82e5d8b | 83 | HG/JCT/ZRkI6+9zw5u8mxnK3+5lqLrfToCynZj22bfY= | AddressOwner | Some(Struct(MoveObjectType(GasCoin)))
 Showing 1 results.
 ```
+
+</details>
+
+- Call a module function with arguments
+
+The function looks like this:
+
+```move
+    public entry fun update_hello_object(hello: &mut Hello, message: String, timestamp: u32, _new_owner: address, _ctx: &mut TxContext) {
+            hello.message = message;
+            hello.timestamp = timestamp;
+            // transfer::transfer(hello, new_owner);
+    }
+```
+
+<details>
+<summary><b>Details:</b></summary>
+❯ sui client call --function update_hello_object --module hello --package 0x5a9f0ce98f908966ec1d3cd4437a83e85b40681f2677842c863d1500e7af65f2 --args 0x4e6c7e7c35b9686ac2865637eaed781c7cfa30f26e71445dab063fffe4de57ca "Good morning" 12342543 0x8833b9cff8032ddf6eb52dd5fe82d9708f53f0d2a89d7ba5e94ba01fcca3c7dc --gas-budget 10000000
+----- Transaction Digest ----
+HQmZAfzcFBpLkKCKZurwE8WpzfJSG9eDjCkUPua4Uyyt
+----- Transaction Data ----
+Transaction Signature: [Signature(Ed25519SuiSignature(Ed25519SuiSignature([0, 127, 189, 111, 213, 244, 122, 129, 118, 127, 143, 40, 191, 230, 213, 102, 103, 33, 253, 136, 85, 253, 137, 97, 234, 207, 16, 254, 75, 52, 146, 196, 229, 77, 151, 86, 114, 83, 84, 60, 20, 140, 40, 232, 189, 192, 224, 30, 179, 174, 89, 213, 40, 250, 56, 54, 221, 17, 13, 228, 70, 202, 81, 41, 14, 247, 74, 76, 207, 50, 26, 243, 102, 68, 224, 179, 229, 3, 245, 204, 113, 50, 73, 71, 73, 95, 3, 242, 168, 43, 184, 71, 71, 215, 208, 0, 165])))]
+Transaction Kind : Programmable
+Inputs: [Object(ImmOrOwnedObject { object_id: 0x4e6c7e7c35b9686ac2865637eaed781c7cfa30f26e71445dab063fffe4de57ca, version: SequenceNumber(95), digest: o#6NBwDh1k23YiuvtYN5Mmjf7mdLxecBBviTwcnGrfVRhV }), Pure(SuiPureValue { value_type: Some(Struct(StructTag { address: 0000000000000000000000000000000000000000000000000000000000000001, module: Identifier("string"), name: Identifier("String"), type_params: [] })), value: "Good morning" }), Pure(SuiPureValue { value_type: Some(U32), value: 12342543 }), Pure(SuiPureValue { value_type: Some(Address), value: "0x8833b9cff8032ddf6eb52dd5fe82d9708f53f0d2a89d7ba5e94ba01fcca3c7dc" })]
+Commands: [
+  MoveCall(0x5a9f0ce98f908966ec1d3cd4437a83e85b40681f2677842c863d1500e7af65f2::hello::update_hello_object(Input(0),Input(1),Input(2),Input(3))),
+]
+
+Sender: 0x7e86320466e04f808a5e046a65d1458b3a28def339ea9986e5874496ef66bd08
+Gas Payment: Object ID: 0x67e786d94eac270580eca1a5364b55efa59586ba6776e560bbae078ef82e5d8b, version: 0x5f, digest: LBCjNb4SJrzibGnEd6D1R386ZhbFgPiCcCEz4VAUgeg
+Gas Owner: 0x7e86320466e04f808a5e046a65d1458b3a28def339ea9986e5874496ef66bd08
+Gas Price: 1000
+Gas Budget: 10000000
+
+----- Transaction Effects ----
+Status : Success
+Mutated Objects:
+
+- ID: 0x4e6c7e7c35b9686ac2865637eaed781c7cfa30f26e71445dab063fffe4de57ca , Owner: Account Address ( 0x7e86320466e04f808a5e046a65d1458b3a28def339ea9986e5874496ef66bd08 )
+- ID: 0x67e786d94eac270580eca1a5364b55efa59586ba6776e560bbae078ef82e5d8b , Owner: Account Address ( 0x7e86320466e04f808a5e046a65d1458b3a28def339ea9986e5874496ef66bd08 )
+
+----- Events ----
+Array []
+----- Object changes ----
+Array [
+Object {
+"type": String("mutated"),
+"sender": String("0x7e86320466e04f808a5e046a65d1458b3a28def339ea9986e5874496ef66bd08"),
+"owner": Object {
+"AddressOwner": String("0x7e86320466e04f808a5e046a65d1458b3a28def339ea9986e5874496ef66bd08"),
+},
+"objectType": String("0x5a9f0ce98f908966ec1d3cd4437a83e85b40681f2677842c863d1500e7af65f2::hello::Hello"),
+"objectId": String("0x4e6c7e7c35b9686ac2865637eaed781c7cfa30f26e71445dab063fffe4de57ca"),
+"version": String("96"),
+"previousVersion": String("95"),
+"digest": String("5xpgt6pMa43fSBMoCPAKzsh44REwUoixxCed8VsPQEFs"),
+},
+Object {
+"type": String("mutated"),
+"sender": String("0x7e86320466e04f808a5e046a65d1458b3a28def339ea9986e5874496ef66bd08"),
+"owner": Object {
+"AddressOwner": String("0x7e86320466e04f808a5e046a65d1458b3a28def339ea9986e5874496ef66bd08"),
+},
+"objectType": String("0x2::coin::Coin<0x2::sui::SUI>"),
+"objectId": String("0x67e786d94eac270580eca1a5364b55efa59586ba6776e560bbae078ef82e5d8b"),
+"version": String("96"),
+"previousVersion": String("95"),
+"digest": String("7AcurZ1You22rtXMbDT7yo9XGS165vecAkSrmdmwncdP"),
+},
+]
+----- Balance changes ----
+Array [
+Object {
+"owner": Object {
+"AddressOwner": String("0x7e86320466e04f808a5e046a65d1458b3a28def339ea9986e5874496ef66bd08"),
+},
+"coinType": String("0x2::sui::SUI"),
+"amount": String("-1023864"),
+},
+]
 
 </details>
