@@ -1,0 +1,3 @@
+[submodule "sui-playground"]
+	path = sui-playground
+	url = https://github.com/abhi3700/sui-playground.git
