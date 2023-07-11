@@ -81,6 +81,8 @@ VSCode extensions (updated frequently):
 
 <!-- TODO: -->
 
+> NOTE: Keep [this](../README.md#note) in mind.
+
 ### SDKs
 
 #### Typescript

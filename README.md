@@ -40,6 +40,10 @@ To upgrade, use the same command which returns output like this:
 Replaced package `move-analyzer v1.0.0 (https://github.com/move-language/move#8f5303a3)` with `move-analyzer v1.1.0 (https://github.com/movebit/move?branch=move-analyzer2-release#1721d726)` (executable `move-analyzer`)
 ```
 
+---
+
+And then `$ rustup update` to update the rust toolchain.
+
 ### Editor
 
 VSCode extensions (updated frequently):
@@ -52,6 +56,16 @@ VSCode extensions (updated frequently):
 #### Move-analyzer
 
 - [move-analyzer](https://marketplace.visualstudio.com/items?itemName=move.move-analyzer)
+  - provides:
+    - suggestions as you type
+    - definitions
+    - show info on hover
+
+##### Note
+
+> When coding for respective blockchains (Aptos/Sui/Starcoin), just enable their respective analyzer. For instance, while writing smart contracts for Sui blockchain, enable [sui-move-analyzer](https://marketplace.visualstudio.com/items?itemName=MoveBit.sui-move-analyzer). Otherwise, there will be more than 1 suggestion (same & repetitive) for the same code like this:
+
+![](img/move-analyzer-1.png)
 
 ## Getting Started
 
