@@ -10,9 +10,13 @@ Learn everything Aptos Blockchain and the way Move language is used in it.
 
 ## Overview
 
-Move is a Rust inspired language, originally built by Meta (formerly Facebook) team for their own blockchain - **Diem**. More on Wikipedia [here](<https://en.wikipedia.org/wiki/Diem_(digital_currency)>).
+For Move language, refer to main [README](../README.md).
 
-But, this language got picked by many blockchains and is being used by them. The list is [here](https://github.com/MystenLabs/awesome-move#move-powered-blockchains). The popular ones are **Sui**, **Aptos**.
+```mermaid
+graph TB
+
+A[Aptos Move] --by--> B[Aptos Foundation]
+```
 
 ## Installation
 
@@ -65,23 +69,35 @@ SUBCOMMANDS:
     update        Update the CLI itself
 ```
 
+### [Language server](../README.md#language-server)
+
+### Editor
+
+VSCode extensions (updated frequently):
+
+#### [Move syntax highlighter](../README.md#move-syntax-highlighter)
+
+#### Aptos Move-analyzer
+
+<!-- TODO: -->
+
 ### SDKs
 
-### Typescript
+#### Typescript
 
 `aptos-core/ecosystem/typescript/sdk`
 
-### Python
+#### Python
 
 `aptos-core/ecosystem/python/sdk`
 
-### Unity
+#### Unity
 
 #### Rust
 
 Source: `aptos-core/sdk`
 
-### Architecture
+## Architecture
 
 ## Getting Started
 

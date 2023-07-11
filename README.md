@@ -49,7 +49,7 @@ VSCode extensions (updated frequently):
 - [Move syntax by Damir](https://marketplace.visualstudio.com/items?itemName=damirka.move-syntax)
 - [Move-Msl-Syx by MoveBit](https://marketplace.visualstudio.com/items?itemName=MoveBit.move-msl-syx)
 
-#### Move-analyzer:
+#### Move-analyzer
 
 - [move-analyzer](https://marketplace.visualstudio.com/items?itemName=move.move-analyzer)
 
